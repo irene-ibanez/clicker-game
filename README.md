@@ -1,6 +1,6 @@
 # clicker-game
 
-
+Irene Ibáñez Martínez
 
 ## Getting started
 
