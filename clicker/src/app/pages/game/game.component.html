@@ -1,0 +1,8 @@
+<div class="main-container">
+  <div *ngIf="userName" color="primary" class="user-name"> Bienvenido {{userName}}</div>
+  <div class="potato-container">
+    <mat-card class="potato-card one">{{clickPotatoes}}</mat-card>
+    <app-raised-button  class="two" [buttonLabel]="buttonLabel" (buttonClick)="addPotatoes()"></app-raised-button>
+    <app-raised-button class="three" [buttonLabel]="buttonMoreLabel" [disabledStatus]="disableAutoClickerButton" (buttonClick)="extraPotatoes()"></app-raised-button>
+  </div>
+</div>

@@ -1,1 +1,9 @@
-<p>home works!</p>
+<div class="form-container">
+  <form [formGroup]="form" class="home-form">
+    <mat-form-field appearance="legacy">
+      <!-- <div class="home-form__label">Introduzca un nombre de usuario</div> -->
+      <input formControlName="name" matInput placeholder="Introduzca un usuario">
+    </mat-form-field>
+  </form>
+  <app-raised-button [buttonLabel]="buttonLabel" (buttonClick)="goToGamePage()"></app-raised-button>
+</div>

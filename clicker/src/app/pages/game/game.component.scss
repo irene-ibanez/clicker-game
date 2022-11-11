@@ -1,0 +1,25 @@
+.main-container {
+  height: 100%;
+  padding: 1rem;
+  background-color: #efbbff;
+  .user-name {
+    font-size: 1rem;
+    color: #673ab7;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+}
+
+.potato-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 21rem;
+  margin: auto;
+  gap: 1rem;
+  .one {
+    text-align: center;
+    max-width: 5rem;
+  }
+
+}
