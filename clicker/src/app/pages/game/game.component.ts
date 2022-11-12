@@ -18,7 +18,6 @@ export class GameComponent implements OnInit {
 
   constructor(
     private router: Router,
-    private readonly storageService: StorageService,
     private readonly potatoesService: PotatoesService
   ) { }
 
@@ -43,6 +42,7 @@ export class GameComponent implements OnInit {
 
   exitSession(): void {
     this.potatoesService.exitSession(this.potatoData);
+    this.subscriptions.forEach(subscription => subscription.unsubscribe());
     this.router.navigate(['/home'])
   }
 

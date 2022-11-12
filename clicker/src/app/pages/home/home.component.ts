@@ -11,13 +11,11 @@ import { StorageService } from 'src/app/shared/services/storage-service/storage.
 })
 export class HomeComponent {
 
-  buttonLabel = 'Entrar';
   public form: FormGroup;
 
   constructor(
     private router: Router,
     private readonly _fb: FormBuilder,
-    private readonly storageService: StorageService,
     private readonly potatoesService: PotatoesService
   ) {
     this.form = this._fb.group({
@@ -26,8 +24,10 @@ export class HomeComponent {
   }
 
   goToGamePage() {
-    this.potatoesService.initGame(this.form.value.name);
-    this.router.navigate(['/game']);
+    if(this.form.status === 'VALID') {
+      this.potatoesService.initGame(this.form.value.name);
+      this.router.navigate(['/game']);
+    }
   }
 
 }

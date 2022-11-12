@@ -1,8 +1,10 @@
 <div class="main-container">
-  <app-raised-button [buttonLabel]="'Exit'" (buttonClick)="exitSession()"></app-raised-button>
-  <div color="primary" class="user-name"> Bienvenido {{potatoData.name}}</div>
+  <div class="main-container__header">
+    <app-raised-button [buttonLabel]="'Exit'" (buttonClick)="exitSession()"></app-raised-button>
+    <div color="primary" class="user-name"> Bienvenido <span>{{potatoData.name}}</span></div>
+  </div>
   <div class="potato-container">
-    <mat-card class="potato-card one">{{potatoData.score}}</mat-card>
+    <mat-card class="potato-card">{{potatoData.score}}</mat-card>
     <app-raised-button [buttonLabel]="'Añadir patatas'" (buttonClick)="addPotatoes()"></app-raised-button>
     <app-raised-button [buttonLabel]="'Extra patatas'" [disabledStatus]="disableAutoClickerButton"
     (buttonClick)="extraPotatoes()"></app-raised-button>

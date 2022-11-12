@@ -5,7 +5,6 @@ import { AppComponent } from './app.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { HomeComponent } from './pages/home/home.component';
-import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input'
@@ -18,7 +17,6 @@ import { GameComponent } from './pages/game/game.component';
   declarations: [
     AppComponent,
     HomeComponent,
-    NotFoundComponent,
     GameComponent
   ],
   imports: [
