@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { LocalStorageService } from 'src/app/shared/services/local-storage.service';
+import { Router } from '@angular/router';
+import { Subscription, takeUntil, timer } from 'rxjs';
+import { PotatoSession } from 'src/app/shared/models/potato-session-model';
+import { PotatoesService } from 'src/app/shared/services/potatoes-service/potatoes-service.service';
+import { StorageService } from 'src/app/shared/services/storage-service/storage.service';
 
 @Component({
   selector: 'app-game',
@@ -8,45 +12,42 @@ import { LocalStorageService } from 'src/app/shared/services/local-storage.servi
 })
 export class GameComponent implements OnInit {
 
-  public userName: string | null = '';
-  public clickPotatoes = 0;
-  public autoClickerBaseCost = 50;
-  public buttonLabel = 'Añadir patatas';
-  public buttonMoreLabel = 'Extra patatas';
+  public potatoData!: PotatoSession;
   public disableAutoClickerButton = true;
+  private subscriptions: Subscription[] = [];
 
-  constructor( private readonly localStorageService: LocalStorageService) { }
+  constructor(
+    private router: Router,
+    private readonly storageService: StorageService,
+    private readonly potatoesService: PotatoesService
+  ) { }
 
   ngOnInit(): void {
-    this.userName = this.localStorageService.getUserName();
+    this.potatoData = this.potatoesService.getCurrentPotatoData();
+
+    this.subscriptions.push(this.potatoesService.disableAutoClickerButtonBehaviourSubject.subscribe({
+      next: (res: boolean) => this.disableAutoClickerButton = res,
+      error: () => {
+        console.log('Error en la suscripción del disabled button');
+      }
+    }));
   }
 
   addPotatoes(): void {
-    this.clickPotatoes = this.clickPotatoes + 1;
-    this.updateAutoClicker();
+    this.potatoesService.addPotatoes();
   }
 
   extraPotatoes(): void {
-    this.runAutoClicker();
-    this.disableAutoClickerButton = true;
+    this.potatoesService.extraPotatoes();
   }
 
-  private updateAutoClicker(): void {
-    if (this.clickPotatoes  % 10 === 2) {
-      this.disableAutoClickerButton = false;
-    }
+  exitSession(): void {
+    this.potatoesService.exitSession(this.potatoData);
+    this.router.navigate(['/home'])
   }
 
-  private runAutoClicker(): void {
-
-    [0,1,2,3,4,5,6,7].forEach(index =>{
-      this.addPotatoes();
-    })
+  ngOnDestroy() {
+    this.subscriptions.forEach(subscription => subscription.unsubscribe());
   }
 
-  // private autoClickerCost() {
-  //   if (this.clickPotatoes = this.autoClickerBaseCost + this.autoClickerBaseCost * this.clickPotatoes) {
-  //     this.disabledStatus = false;
-  //   }
-  // }
 }

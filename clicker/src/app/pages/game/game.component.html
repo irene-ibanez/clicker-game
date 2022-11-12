@@ -1,8 +1,10 @@
 <div class="main-container">
-  <div *ngIf="userName" color="primary" class="user-name"> Bienvenido {{userName}}</div>
+  <app-raised-button [buttonLabel]="'Exit'" (buttonClick)="exitSession()"></app-raised-button>
+  <div color="primary" class="user-name"> Bienvenido {{potatoData.name}}</div>
   <div class="potato-container">
-    <mat-card class="potato-card one">{{clickPotatoes}}</mat-card>
-    <app-raised-button  class="two" [buttonLabel]="buttonLabel" (buttonClick)="addPotatoes()"></app-raised-button>
-    <app-raised-button class="three" [buttonLabel]="buttonMoreLabel" [disabledStatus]="disableAutoClickerButton" (buttonClick)="extraPotatoes()"></app-raised-button>
+    <mat-card class="potato-card one">{{potatoData.score}}</mat-card>
+    <app-raised-button [buttonLabel]="'Añadir patatas'" (buttonClick)="addPotatoes()"></app-raised-button>
+    <app-raised-button [buttonLabel]="'Extra patatas'" [disabledStatus]="disableAutoClickerButton"
+    (buttonClick)="extraPotatoes()"></app-raised-button>
   </div>
 </div>
