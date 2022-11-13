@@ -9,20 +9,16 @@ import { StorageService } from '../../services/storage-service/storage.service';
 export class CanActivateViaGameSessionGuard implements CanActivate {
 
   constructor(
-    private readonly storageService: StorageService,
     private readonly potatoesService: PotatoesService,
     private readonly router: Router
     ) { }
 
   canActivate() {
-
       // If the user is not logged in we'll send them back to the home page
       if (!this.potatoesService.isSessionLoaded()) {
-          console.log('No estás logueado');
           this.router.navigate(['/home']);
           return false;
       }
-
       return true;
   }
 

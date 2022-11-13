@@ -1,4 +1,4 @@
-<div class="main-container">
+<div class="main-container"  *ngIf="potatoData">
   <div class="main-container__header">
     <app-raised-button [buttonLabel]="'Exit'" (buttonClick)="exitSession()"></app-raised-button>
     <div color="primary" class="user-name"> Bienvenido <span>{{potatoData.name}}</span></div>

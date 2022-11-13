@@ -53,7 +53,7 @@ export class PotatoesService {
 
   exitSession(data: PotatoSession): void {
     this.exitSubject.next(true);
-    this.storageService.saveState(data);
+    this.storageService.saveSession(data);
     this.isLoaded = false;
   }
 

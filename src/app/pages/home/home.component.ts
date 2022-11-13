@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { PotatoesService } from 'src/app/shared/services/potatoes-service/potatoes-service.service';
-import { StorageService } from 'src/app/shared/services/storage-service/storage.service';
 
 @Component({
   selector: 'app-home',

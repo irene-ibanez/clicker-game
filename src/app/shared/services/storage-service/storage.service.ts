@@ -19,10 +19,12 @@ export class StorageService {
         score: 0,
         numAutoClickers: 0
       }
-    } return potatoData;
+    }
+    this.saveSession(potatoData);
+    return potatoData;
   }
 
-  saveState(data: PotatoSession): void {
+  saveSession(data: PotatoSession): void {
     localStorage.setItem(data.name, JSON.stringify(data));
   }
 

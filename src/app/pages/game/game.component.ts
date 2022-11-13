@@ -17,19 +17,21 @@ export class GameComponent implements OnInit {
   private subscriptions: Subscription[] = [];
 
   constructor(
-    private router: Router,
+    private readonly router: Router,
     private readonly potatoesService: PotatoesService
   ) { }
 
   ngOnInit(): void {
     this.potatoData = this.potatoesService.getCurrentPotatoData();
 
-    this.subscriptions.push(this.potatoesService.disableAutoClickerButtonBehaviourSubject.subscribe({
-      next: (res: boolean) => this.disableAutoClickerButton = res,
-      error: () => {
-        console.log('Error en la suscripción del disabled button');
-      }
-    }));
+    if(this.potatoesService.disableAutoClickerButtonBehaviourSubject) {
+      this.subscriptions.push(this.potatoesService.disableAutoClickerButtonBehaviourSubject.subscribe({
+        next: (res: boolean) => this.disableAutoClickerButton = res,
+        error: () => {
+          console.log('Error en la suscripción del disabled button');
+        }
+      }));
+    }
   }
 
   addPotatoes(): void {
@@ -47,6 +49,7 @@ export class GameComponent implements OnInit {
   }
 
   ngOnDestroy() {
+    this.potatoesService.exitSession(this.potatoData);
     this.subscriptions.forEach(subscription => subscription.unsubscribe());
   }
 
