@@ -1,0 +1,81 @@
+{
+  "configVersion": 1,
+  "timestamp": 1668366877697,
+  "index": "/clicker-game/index.html",
+  "assetGroups": [
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "/clicker-game/favicon.ico",
+        "/clicker-game/index.html",
+        "/clicker-game/main.47af730b7cadf9e5.js",
+        "/clicker-game/manifest.webmanifest",
+        "/clicker-game/polyfills.a4608f217cc9cd3e.js",
+        "/clicker-game/runtime.38c2469e10fb3c85.js",
+        "/clicker-game/styles.252407e5220450de.css"
+      ],
+      "patterns": []
+    },
+    {
+      "name": "assets",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "/clicker-game/assets/icons/icon-128x128.png",
+        "/clicker-game/assets/icons/icon-144x144.png",
+        "/clicker-game/assets/icons/icon-152x152.png",
+        "/clicker-game/assets/icons/icon-192x192.png",
+        "/clicker-game/assets/icons/icon-384x384.png",
+        "/clicker-game/assets/icons/icon-512x512.png",
+        "/clicker-game/assets/icons/icon-72x72.png",
+        "/clicker-game/assets/icons/icon-96x96.png"
+      ],
+      "patterns": []
+    }
+  ],
+  "dataGroups": [],
+  "hashTable": {
+    "/clicker-game/assets/icons/icon-128x128.png": "dae3b6ed49bdaf4327b92531d4b5b4a5d30c7532",
+    "/clicker-game/assets/icons/icon-144x144.png": "b0bd89982e08f9bd2b642928f5391915b74799a7",
+    "/clicker-game/assets/icons/icon-152x152.png": "7479a9477815dfd9668d60f8b3b2fba709b91310",
+    "/clicker-game/assets/icons/icon-192x192.png": "1abd80d431a237a853ce38147d8c63752f10933b",
+    "/clicker-game/assets/icons/icon-384x384.png": "329749cd6393768d3131ed6304c136b1ca05f2fd",
+    "/clicker-game/assets/icons/icon-512x512.png": "559d9c4318b45a1f2b10596bbb4c960fe521dbcc",
+    "/clicker-game/assets/icons/icon-72x72.png": "c457e56089a36952cd67156f9996bc4ce54a5ed9",
+    "/clicker-game/assets/icons/icon-96x96.png": "3914125a4b445bf111c5627875fc190f560daa41",
+    "/clicker-game/favicon.ico": "8c74ac58b8b5cd63dc5610cea541ebbd13896c60",
+    "/clicker-game/index.html": "1f882a8082b7eda1a82d883c34de820bdd0e1e6c",
+    "/clicker-game/main.47af730b7cadf9e5.js": "722c5288f2a5f3b7b74a48a7c7d660f95b1399a2",
+    "/clicker-game/manifest.webmanifest": "3983835fbe389e2f38810e11fcc8eacac2e215d5",
+    "/clicker-game/polyfills.a4608f217cc9cd3e.js": "a4c274865c47a0b81a06c97493101c091f20b91c",
+    "/clicker-game/runtime.38c2469e10fb3c85.js": "071a0addf77e22baa8ec3463191e81b7173115ce",
+    "/clicker-game/styles.252407e5220450de.css": "eeb98e0109bd0a7a81dc13d6cd75227b47d5162f"
+  },
+  "navigationUrls": [
+    {
+      "positive": true,
+      "regex": "^\\/.*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*\\.[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*\\/.*$"
+    }
+  ],
+  "navigationRequestStrategy": "performance"
+}
