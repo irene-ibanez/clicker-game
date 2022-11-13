@@ -3,6 +3,7 @@
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.9.
 This project is hosted on GitHub: https://github.com/irene-ibanez/clicker-game
 The app is running on: https://irene-ibanez.github.io/clicker-game/home
+This is a WPA. Install it in your device to be able to access offline
 
 ## Development server
 
