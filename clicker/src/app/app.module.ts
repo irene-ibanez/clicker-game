@@ -1,16 +1,26 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+import { HomeComponent } from './pages/home/home.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input'
+import {MatCardModule} from '@angular/material/card';
+import { SharedModule } from './shared/shared.module';
+import { GameComponent } from './pages/game/game.component';
+
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HomeComponent,
+    GameComponent
   ],
   imports: [
+    SharedModule,
     BrowserModule,
     AppRoutingModule,
     ServiceWorkerModule.register('ngsw-worker.js', {
@@ -18,8 +28,12 @@ import { environment } from '../environments/environment';
       // Register the ServiceWorker as soon as the application is stable
       // or after 30 seconds (whichever comes first).
       registrationStrategy: 'registerWhenStable:30000'
-    })
-  ],
+    }),
+    BrowserAnimationsModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatCardModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })
