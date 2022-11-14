@@ -19,4 +19,5 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 
 ## Deploy to GitHub Pages
 
+Change base path in index.html to /clicker-game.
 Run `ng deploy` to deploy to GitHub Pages.

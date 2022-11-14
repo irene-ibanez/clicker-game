@@ -79,7 +79,6 @@ export class GameComponent implements OnInit {
 
   addPotatoes(): void {
     this.potatoesService.addPotatoes();
-    this.particlesOptions.particles.wobble.speed = { min: this.potatoData.numAutoClickers*2, max: this.potatoData.numAutoClickers*3 };
   }
 
   extraPotatoes(): void {
