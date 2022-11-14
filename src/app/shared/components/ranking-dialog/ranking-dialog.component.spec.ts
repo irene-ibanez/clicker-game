@@ -1,7 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { MatDialogModule, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
-import { DialogData, RankingDialogComponent } from './ranking-dialog.component';
+import { RankingDialogComponent } from './ranking-dialog.component';
 
 describe('RankingDialogComponent', () => {
   let component: RankingDialogComponent;
@@ -17,8 +17,7 @@ describe('RankingDialogComponent', () => {
       declarations: [ RankingDialogComponent ],
       imports: [MatDialogModule],
       providers: [
-        { provide: MAT_DIALOG_DATA, useValue: data},
-
+        { provide: MAT_DIALOG_DATA, useValue: data}
       ]
     })
     .compileComponents();
