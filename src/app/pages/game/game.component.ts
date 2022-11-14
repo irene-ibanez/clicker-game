@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Subscription, takeUntil, timer } from 'rxjs';
+import { Subscription } from 'rxjs';
 import { PotatoSession } from 'src/app/shared/models/potato-session-model';
 import { PotatoesService } from 'src/app/shared/services/potatoes-service/potatoes-service.service';
-import { StorageService } from 'src/app/shared/services/storage-service/storage.service';
+import { loadFull } from 'tsparticles';
+import { Container, Engine, MoveDirection } from 'tsparticles-engine';
 
 @Component({
   selector: 'app-game',
@@ -15,7 +16,49 @@ export class GameComponent implements OnInit {
   public potatoData!: PotatoSession;
   public disableAutoClickerButton = true;
   private subscriptions: Subscription[] = [];
+  id = "tsparticles";
+  particlesOptions = {
+    background: {
+        color: "#333",
+    },
+    particles: {
+      move: {
+        direction: MoveDirection.bottom,
+        enable: true,
+        random: false,
+        straight: false,
+      },
+        color: {
+        value: "#EFB810"
+      },
+      opacity: {
+        value: { min: 0.5, max: 0.8 },
+      },
+      size: {
+        value: { min: 1, max: 10 },
+      },
 
+      wobble: {
+        distance: 20,
+        enable: true,
+        speed: {
+          min: -5,
+          max: 5,
+        },
+      },
+      shape: {
+        options: {
+          image: [
+            {
+              src: "/assets/images/patata.png",
+              width: 32,
+              height: 32
+            }
+          ]
+        }
+      },
+    }
+};
   constructor(
     private readonly router: Router,
     private readonly potatoesService: PotatoesService
@@ -36,6 +79,7 @@ export class GameComponent implements OnInit {
 
   addPotatoes(): void {
     this.potatoesService.addPotatoes();
+    this.particlesOptions.particles.wobble.speed = { min: this.potatoData.numAutoClickers*2, max: this.potatoData.numAutoClickers*3 };
   }
 
   extraPotatoes(): void {
@@ -47,6 +91,14 @@ export class GameComponent implements OnInit {
     this.subscriptions.forEach(subscription => subscription.unsubscribe());
     this.router.navigate(['/home'])
   }
+
+   particlesLoaded(container: Container): void {
+        console.log(container);
+    }
+
+    async particlesInit(engine: Engine): Promise<void> {
+      await loadFull(engine);
+    }
 
   ngOnDestroy() {
     this.potatoesService.exitSession(this.potatoData);

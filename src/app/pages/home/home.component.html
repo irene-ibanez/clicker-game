@@ -9,3 +9,10 @@
   </form>
   <app-raised-button [buttonLabel]="'Ver ranking'" (buttonClick)="rankingCall()"></app-raised-button>
 </div>
+
+<ng-particles
+    [id]="id"
+    [options]="particlesOptions"
+    [particlesInit]="particlesInit"
+    (particlesLoaded)="particlesLoaded($event)"
+></ng-particles>

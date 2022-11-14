@@ -1,16 +1,18 @@
 import { NgModule } from '@angular/core';
+import { MatCardModule } from '@angular/material/card';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { NgParticlesModule } from "ng-particles";
+import { environment } from '../environments/environment';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ServiceWorkerModule } from '@angular/service-worker';
-import { environment } from '../environments/environment';
-import { HomeComponent } from './pages/home/home.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatInputModule} from '@angular/material/input'
-import {MatCardModule} from '@angular/material/card';
-import { SharedModule } from './shared/shared.module';
 import { GameComponent } from './pages/game/game.component';
+import { HomeComponent } from './pages/home/home.component';
+import { SharedModule } from './shared/shared.module';
+
 
 
 @NgModule({
@@ -32,7 +34,8 @@ import { GameComponent } from './pages/game/game.component';
     BrowserAnimationsModule,
     MatFormFieldModule,
     MatInputModule,
-    MatCardModule
+    MatCardModule,
+    NgParticlesModule
     ],
   providers: [],
   bootstrap: [AppComponent]
