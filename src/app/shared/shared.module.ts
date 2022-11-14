@@ -3,12 +3,14 @@ import { CommonModule } from '@angular/common';
 import {MatButtonModule} from '@angular/material/button';
 import { RaisedButtonComponent } from './components/raised-button/raised-button.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { CustomUnitsPipe } from './pipes/custom-units/custom-units.pipe';
 
 
 
 @NgModule({
   declarations: [
-    RaisedButtonComponent
+    RaisedButtonComponent,
+    CustomUnitsPipe
   ],
   imports: [
     CommonModule,
@@ -17,7 +19,8 @@ import { ReactiveFormsModule } from '@angular/forms';
   ],
   exports: [
     RaisedButtonComponent,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    CustomUnitsPipe
   ]
 })
 export class SharedModule { }
