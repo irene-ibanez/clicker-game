@@ -12,13 +12,9 @@ export interface DialogData {
   templateUrl: './ranking-dialog.component.html',
   styleUrls: ['./ranking-dialog.component.scss']
 })
-export class RankingDialogComponent implements OnInit {
+export class RankingDialogComponent {
 
   constructor(@Inject(MAT_DIALOG_DATA) public data: DialogData[]) {}
-
-
-  ngOnInit(): void {
-  }
 
 }
 

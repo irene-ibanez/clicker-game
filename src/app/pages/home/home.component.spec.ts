@@ -1,5 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { FormBuilder, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatDialogModule, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -17,6 +18,10 @@ describe('HomeComponent', () => {
   let router = {
     navigate: jasmine.createSpy('navigate')
   }
+  const data = [{
+    name: '',
+    score: 0
+  }];
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
@@ -26,9 +31,11 @@ describe('HomeComponent', () => {
         ReactiveFormsModule,
         MatFormFieldModule,
         MatInputModule,
+        MatDialogModule,
         BrowserAnimationsModule],
       providers: [
         FormBuilder,
+        { provide: MAT_DIALOG_DATA, useValue: data},
         { provide: PotatoesService, useValue: potatoesService },
         { provide: Router, useValue: router }
       ]

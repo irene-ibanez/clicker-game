@@ -45,5 +45,4 @@ export class HomeComponent {
       data: this.rankingPotatoData
     });
   }
-
 }

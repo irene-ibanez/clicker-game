@@ -25,36 +25,35 @@ export class StorageService {
   }
 
   saveSession(data: PotatoSession): void {
-    console.log();
     localStorage.setItem(data.name, JSON.stringify(data));
-    if(!this.getPotatoStorage().find(s => s == data.name)){
-      const arraySesions = this.getPotatoStorage();
-      arraySesions .push(data.name);
+    // if(!this.getPotatoStorage().find(s => s == data.name)){
+    //   const arraySesions = this.getPotatoStorage();
+    //   arraySesions .push(data.name);
 
-    }
+    // }
   }
 
-  getAllSessions():PotatoSession[]{
-    const sessions:PotatoSession[] = [];
-    this.getPotatoStorage().forEach(name=>{
-      sessions.push(this.loadSession(name));
-      localStorage.setItem('potatoStorageIndex', JSON.stringify(sessions));
+  // getAllSessions():PotatoSession[]{
+  //   const sessions:PotatoSession[] = [];
+  //   this.getPotatoStorage().forEach(name=>{
+  //     sessions.push(this.loadSession(name));
+  //     localStorage.setItem('potatoStorageIndex', JSON.stringify(sessions));
 
-    })
-    return sessions;
-  }
+  //   })
+  //   return sessions;
+  // }
 
-  private getPotatoStorage(): string[] {
-    const potatoStorage = localStorage.getItem('potatoStorageIndex');
-    let potatoStorageObject;
-    if (!potatoStorage) {
-      potatoStorageObject = {sessions: []};
-      localStorage.setItem('potatoStorageIndex', JSON.stringify(potatoStorageObject));
-    } else {
-      potatoStorageObject = JSON.parse(potatoStorage);
-    }
-    return potatoStorageObject.sessions;
-  }
+  // private getPotatoStorage(): string[] {
+  //   const potatoStorage = localStorage.getItem('potatoStorageIndex');
+  //   let potatoStorageObject;
+  //   if (!potatoStorage) {
+  //     potatoStorageObject = {sessions: []};
+  //     localStorage.setItem('potatoStorageIndex', JSON.stringify(potatoStorageObject));
+  //   } else {
+  //     potatoStorageObject = JSON.parse(potatoStorage);
+  //   }
+  //   return potatoStorageObject.sessions;
+  // }
 
   public allItemsFromStorage() {
     let values: any[] = [];
@@ -68,7 +67,5 @@ export class StorageService {
     values.sort((a,b) => b.score - a.score);
     return values;
   }
-
-
 
 }
