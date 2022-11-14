@@ -4,7 +4,7 @@
     <div color="primary" class="user-name"> Bienvenido <span>{{potatoData.name}}</span></div>
   </div>
   <div class="potato-container">
-    <mat-card class="potato-card">{{potatoData.score}}</mat-card>
+    <mat-card class="potato-card">{{potatoData.score | customUnits}}</mat-card>
     <app-raised-button [buttonLabel]="'Añadir patatas'" (buttonClick)="addPotatoes()"></app-raised-button>
     <app-raised-button [buttonLabel]="'Extra patatas'" [disabledStatus]="disableAutoClickerButton"
     (buttonClick)="extraPotatoes()"></app-raised-button>
