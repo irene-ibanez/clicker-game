@@ -1,0 +1,14 @@
+<div class=".modal-container">
+  <div class="title">Ranking puntuaciones</div>
+
+  <div class="data-table">
+    <div class="data-table__group">
+      <div  class="data-table__title">Nombre</div>
+      <div *ngFor="let user of data" class="data-table__name">{{user.name}}</div>
+    </div>
+    <div class="data-table__group">
+      <div class="data-table__title">Puntuación</div>
+      <div *ngFor="let user of data" class="data-table__score">{{user.score}}</div>
+    </div>
+  </div>
+</div>

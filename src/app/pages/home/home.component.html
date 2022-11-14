@@ -1,4 +1,5 @@
 <div class="form-container">
+  <div class="title">Clicker Game</div>
   <form [formGroup]="form" class="home-form">
     <div class="home-form__label">Introduzca un nombre de usuario para iniciar o continuar sesión</div>
     <mat-form-field appearance="legacy">
@@ -6,4 +7,5 @@
     </mat-form-field>
     <app-raised-button [buttonLabel]="'Entrar'" (buttonClick)="goToGamePage()"></app-raised-button>
   </form>
+  <app-raised-button [buttonLabel]="'Ver ranking'" (buttonClick)="rankingCall()"></app-raised-button>
 </div>

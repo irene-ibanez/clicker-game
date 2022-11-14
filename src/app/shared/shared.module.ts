@@ -4,18 +4,22 @@ import {MatButtonModule} from '@angular/material/button';
 import { RaisedButtonComponent } from './components/raised-button/raised-button.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CustomUnitsPipe } from './pipes/custom-units/custom-units.pipe';
+import { RankingDialogComponent } from './components/ranking-dialog/ranking-dialog.component';
+import { MatDialogModule } from '@angular/material/dialog';
 
 
 
 @NgModule({
   declarations: [
     RaisedButtonComponent,
-    CustomUnitsPipe
+    CustomUnitsPipe,
+    RankingDialogComponent
   ],
   imports: [
     CommonModule,
     ReactiveFormsModule,
-    MatButtonModule
+    MatButtonModule,
+    MatDialogModule
   ],
   exports: [
     RaisedButtonComponent,
