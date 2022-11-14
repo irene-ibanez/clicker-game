@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1668444183483,
+  "timestamp": 1668444338534,
   "index": "/index.html",
   "assetGroups": [
     {
@@ -54,7 +54,7 @@
     "/assets/icons/icon-96x96.png": "3914125a4b445bf111c5627875fc190f560daa41",
     "/assets/images/patata.png": "5587117167c52cb93295520fdffa40befa1c2f47",
     "/favicon.ico": "8c74ac58b8b5cd63dc5610cea541ebbd13896c60",
-    "/index.html": "d18f8b85f45dffb2c63b51cf75b563e6aadab2a7",
+    "/index.html": "fd87087782a0457f970e0a01b93b1f0e606f1f66",
     "/main.aaf58b5ddb4c8b86.js": "2bdf5d3e9aa8b609470e21dd8e33d7f7df200205",
     "/manifest.webmanifest": "3983835fbe389e2f38810e11fcc8eacac2e215d5",
     "/polyfills.a4608f217cc9cd3e.js": "a4c274865c47a0b81a06c97493101c091f20b91c",
